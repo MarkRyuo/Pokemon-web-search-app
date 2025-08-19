@@ -6,6 +6,11 @@ const saveSearch = (pokemonName) => {
     localStorage.setItem("pokemonName", pokemonName);
 };
 
+const loadingSearch = () => {
+    const loading = document.createElement("h1");
+    loading.innerHTML = "Loading..."
+}
+
 
 
 const fetchPokemon = async (name) => {
@@ -28,7 +33,7 @@ const fetchPokemon = async (name) => {
 
 export async function searchThePokemon() {
     // get the input
-    const inptPokemon = document.getElementById("inptPokemon").value.toLowerCase().trim() ;
+    const inptPokemon = document.getElementById("inptPokemon").value.toLowerCase().trim();
 
     // guard clause 
     if(!inptPokemon) {
@@ -39,11 +44,13 @@ export async function searchThePokemon() {
     // get the response 
     const data = await fetchPokemon(inptPokemon);
     
-    // save the name of pokemon searched!
-
     if(data) {
-        saveSearch(data.name) ;
-        alert(`Pokemon Found! ${data.name}`) ;
+        document.append(loadingSearch)
+        setTimeout(() => {
+            saveSearch(data.name) ;
+            alert(`Pokemon Found! ${data.name}`) ;
+
+        }, 2000)
     } else {
         alert("Pokemon is not Found!") ;
     }

@@ -37,14 +37,20 @@ export async function searchThePokemon() {
 
     // get the response 
     const data = await fetchPokemon(inptPokemon);
-
-    setTimeout(() => {
-
-    }, 3000)
+    const container = document.getElementById("container") ;
+    const h1 = document.createElement("h1");
     
     if(data) {
-        saveSearch(data.name) ;
-        alert(`Pokemon Found! ${data.name}`) ;
+        container.style.display = "none";
+
+        h1.innerHTML = "LOADING..."
+        document.body.append(h1);
+        setTimeout(() => {
+            saveSearch(data.name) ;
+            alert(`Pokemon Found! ${data.name}`) ;
+            container.style.display = "block";
+            h1.style.display = "none";
+        }, 3000)
 
     } else {
         alert("Pokemon is not Found!") ;

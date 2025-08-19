@@ -37,6 +37,10 @@ export async function searchThePokemon() {
 
     // get the response 
     const data = await fetchPokemon(inptPokemon);
+
+    setTimeout(() => {
+
+    }, 3000)
     
     if(data) {
         saveSearch(data.name) ;

@@ -24,6 +24,10 @@ const fetchPokemon = async (name) => {
     }
 };
 
+const isLoading = (show) => {
+    document.getElementById("loading").style.display = show ? "block" : "none";
+}
+
 
 export async function searchThePokemon() {
     // get the input
@@ -34,26 +38,30 @@ export async function searchThePokemon() {
         alert("Enter a Pokemon!")
         return ;
     }
-
+    
+    
+    
     // get the response 
     const data = await fetchPokemon(inptPokemon);
     const container = document.getElementById("container") ;
-    const h1 = document.createElement("h1");
+    
     
     if(data) {
+        // if data is true, hide the container & show the isLoading func 
+        // if data is true , setTimeout for delay 3s to show the data & show the container & set the isLoading to false
+        isLoading(true)
         container.style.display = "none";
-
-        h1.innerHTML = "LOADING..."
-        document.body.append(h1);
+        
         setTimeout(() => {
             saveSearch(data.name) ;
             alert(`Pokemon Found! ${data.name}`) ;
+            isLoading(false)
             container.style.display = "block";
-            h1.style.display = "none";
         }, 3000)
 
     } else {
         alert("Pokemon is not Found!") ;
+        container.style.display = "block"
     }
     
 };

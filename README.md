@@ -14,3 +14,11 @@ Next step
 - derecting the new page!
 - Show the image
 
+
+Loading 
+
+- if true the search 
+- hide the container
+- display the loading about 3s
+- redisplay the container
+

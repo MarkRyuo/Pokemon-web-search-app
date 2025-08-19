@@ -1,33 +1,51 @@
 
 
-const SavetheSearch = () => {
-    
-}
+const saveSearch = (pokemonName) => {
+    // save the name of pokemon
+    // save the last search
+    localStorage.setItem("pokemonName", pokemonName);
+};
 
 
 
-const fetchPokemon = async (pokemonName) => {
+const fetchPokemon = async (name) => {
     try {
         // fetch the response
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`, {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, {
             method: "GET"
         })
         if(!response.ok){
-            throw new Error("Couldt fetch the api data!")
-        } else {
-            return await response.json()
+            throw new Error("Failed to fetch Pokemon data!")
         }
+        return await response.json();
+
     } catch (error) {
-        console.error(error, "Something went wrong!")
+        console.error("Error Fetching Pokemon API!", error.message) ;
+        return null ;
     }
-}
+};
 
 
-export async function SearchthePokemon() {
+export async function searchThePokemon() {
     // get the input
-    const inptPokemon = document.getElementById("inptPokemon").value ;
+    const inptPokemon = document.getElementById("inptPokemon").value.toLowerCase().trim() ;
+
+    // guard clause 
+    if(!inptPokemon) {
+        alert("Enter a Pokemon!")
+        return ;
+    }
 
     // get the response 
-    const data = await fetchPokemon(inptPokemon)
-    console.log(data)
-}
+    const data = await fetchPokemon(inptPokemon);
+    
+    // save the name of pokemon searched!
+
+    if(data) {
+        saveSearch(data.name) ;
+        alert(`Pokemon Found! ${data.name}`) ;
+    } else {
+        alert("Pokemon is not Found!") ;
+    }
+    
+};

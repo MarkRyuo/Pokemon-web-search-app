@@ -1,4 +1,5 @@
 import './style.css'
+import { SearchthePokemon } from './searchforpokemon'
 
 
 document.querySelector('#app').innerHTML = `
@@ -9,4 +10,9 @@ document.querySelector('#app').innerHTML = `
     </button>
   </div>
 `
+
+const btnSearch = document.getElementById("btnSearch");
+btnSearch.addEventListener("click", SearchthePokemon);
+
+
 

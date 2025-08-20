@@ -40,7 +40,7 @@ export async function searchThePokemon() {
     }
     
     
-    // startinf fetching
+    // starting fetching
     // get the response 
     const data = await fetchPokemon(inptPokemon);
     const container = document.getElementById("container") ;

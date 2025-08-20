@@ -5,7 +5,8 @@ import { searchThePokemon } from './searchforpokemon'
 document.querySelector('#app').innerHTML = `
   <div>
     <div id="container">
-      <input type="text" name="searchPokemon" placeholder="Search a Pokemon!" id="inptPokemon">
+    <h1>POKEMON</h1>
+      <input type="text" name="searchPokemon" placeholder="Search a Pokemon!" id="inptPokemon"> <br>
       <button type="button" id="btnSearch">
         Search
       </button>

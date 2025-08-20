@@ -8,6 +8,7 @@ const saveSearch = (pokemonName) => {
 
 
 const fetchPokemon = async (name) => {
+    //
     try {
         // fetch the response
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, {

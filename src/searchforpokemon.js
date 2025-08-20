@@ -48,7 +48,7 @@ export async function searchThePokemon() {
     
     if(data) {
         // if data is true, hide the container & show the isLoading func. 
-        // if data is true , setTimeout for delay 3s to show the data & show the container & set the isLoading to false.
+        // if data is true, setTimeout for delay 3s to show the data & show the container & set the isLoading to false.
         isLoading(true)
         container.style.display = "none";
         

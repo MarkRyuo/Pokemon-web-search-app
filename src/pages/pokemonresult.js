@@ -1,7 +1,7 @@
 
 
 export function result() {
-  return `
+  document.querySelector("#app").innerHTML = `
         <div>
             <h1>Result!</h1>
         

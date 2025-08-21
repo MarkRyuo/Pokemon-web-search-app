@@ -1,39 +1,11 @@
-import { result } from './pages/pokemonresult.js'
+import Navigo from "navigo";
+import { homepage } from "./main.js";
+import { result } from "./pages/pokemonresult.js"
 
+export const router = new Navigo('/') ;
 
-const navigateTo = url => {
-    history.pushState(null, null, url);
-    router();
-}
+router 
+ .on ('/', () => homepage())
+ .on ('/result', () => document.querySelector("#app").innerHTML = result())
 
-
-
-const router = async () => {
-
-    const routes = [
-        { path : "/", view : result() },
-        {path: "/result", view : () => console.log("Viewing result")}
-    ];
-
-    // Test each routes for potencial matches
-    const potencialMatches = routes.map(route => {
-        return {
-            route : route,
-            isMatch : location.pathname === route.path 
-        }
-    });
-    console.log(potencialMatches);
-
-    const match = potencialMatches.find(potencialMatch => potencialMatch.isMatch) ;
-
-    if(!match) {
-        match = {
-            route : routes[0],
-            isMatch: true
-        }
-    }
-}
-
-document.addEventListener(DOMContentLoaded, () => {
-    router()
-}) ;
+ router.resolve();

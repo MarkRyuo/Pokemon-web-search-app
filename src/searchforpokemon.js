@@ -1,4 +1,4 @@
-
+import { router } from "./router.js"
 
 const saveSearch = (pokemonName) => {
     // save the name of pokemon
@@ -58,7 +58,7 @@ export async function searchThePokemon() {
             isLoading(false)
             container.style.display = "block";
 
-            window.location.hash = "/result";
+            router.navigate("/result");
         }, 3000)
 
     } else {

@@ -22,6 +22,10 @@ Loading
 - display the loading about 3s
 - redisplay the container
 
+Display the results
+
+
+
 
 ---
 

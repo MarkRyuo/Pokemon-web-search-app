@@ -14,6 +14,7 @@ const fetchPokemon = async (name) => {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, {
             method: "GET"
         })
+        console.log(response)
         if(!response.ok){
             throw new Error("Failed to fetch Pokemon data!")
         }
@@ -45,6 +46,22 @@ export async function searchThePokemon() {
     // get the response 
     const data = await fetchPokemon(inptPokemon);
     const container = document.getElementById("container") ;
+    console.log(data)
+
+
+    const display = () => {
+
+            const containerResult = document.getElementById("containerResult") ;
+
+            data.forEach = (dataResult) => {
+                containerResult.innerHTML = `
+                    <ul>
+                        <li>${dataResult.name}</li>
+                        <li>${dataResult.weight}</li>
+                    </ul>
+                `
+            }
+        }
     
     
     if(data) {
@@ -58,8 +75,12 @@ export async function searchThePokemon() {
             isLoading(false)
             container.style.display = "block";
 
-            router.navigate("/result");
+            router.navigate("/result"); //
+            display()
         }, 3000)
+
+
+        
 
     } else {
         alert("Pokemon is not Found!") ;
@@ -67,3 +88,20 @@ export async function searchThePokemon() {
     }
     
 };
+
+
+const showResult = async () => {
+
+    const isSearchThePokemon = searchThePokemon() ; // if search is true 
+    
+    const data = await fetchPokemon() ;
+
+    const mapPokemon = data.find((pokemon) => {
+        return pokemon.name
+    });
+
+    if(isSearchThePokemon) {
+
+
+    }
+}

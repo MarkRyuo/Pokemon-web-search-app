@@ -6,6 +6,9 @@ export const router = new Navigo('/') ;
 
 router 
  .on ('/', () => homepage())
- .on ('/result', () => document.querySelector("#app").innerHTML = result())
+ .on ('/result', () => {
+    document.querySelector("#app").innerHTML = result() ;
+    console.log("Viewing Result!")
+ })
 
  router.resolve();

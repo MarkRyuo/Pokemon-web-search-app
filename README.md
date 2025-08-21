@@ -22,3 +22,12 @@ Loading
 - display the loading about 3s
 - redisplay the container
 
+
+---
+
+
+
+Installed 
+
+- Routing : Navigo 
+- Test json for API : 

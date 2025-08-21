@@ -55,9 +55,10 @@ export async function searchThePokemon() {
         
         setTimeout(() => {
             saveSearch(data.name) ;
-            alert(`Pokemon Found! ${data.name}`) ;
             isLoading(false)
             container.style.display = "block";
+
+            window.location.hash = "/result";
         }, 3000)
 
     } else {

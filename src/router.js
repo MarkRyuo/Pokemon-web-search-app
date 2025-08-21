@@ -10,7 +10,7 @@ export const router = new Navigo('/') ;
 router 
  .on ('/', () => homepage())
  .on ('/result', () => result()) 
- .notFound(() => render(`<h1>404 Page Not Found!</h1>`))
+ .notFound(() => { render(`<h1>404 Page Not Found!</h1>`)})
 
  
  document.addEventListener("DOMContentLoaded", () => {

@@ -1,3 +1,4 @@
+//import Navigo
 import Navigo from "navigo";
 import { homepage } from "./main.js";
 import { result } from "./pages/pokemonresult.js"

@@ -48,20 +48,9 @@ export async function searchThePokemon() {
     const container = document.getElementById("container") ;
     console.log(data)
 
+    const resultContainer = document.getElementById("resultContainer") ;
 
-    const display = () => {
 
-            const containerResult = document.getElementById("containerResult") ;
-
-            data.forEach = (dataResult) => {
-                containerResult.innerHTML = `
-                    <ul>
-                        <li>${dataResult.name}</li>
-                        <li>${dataResult.weight}</li>
-                    </ul>
-                `
-            }
-        }
     
     
     if(data) {
@@ -76,7 +65,8 @@ export async function searchThePokemon() {
             container.style.display = "block";
 
             router.navigate("/result"); //
-            display()
+
+            resultContainer.innerHTML = data.name
         }, 3000)
 
 
@@ -89,19 +79,3 @@ export async function searchThePokemon() {
     
 };
 
-
-const showResult = async () => {
-
-    const isSearchThePokemon = searchThePokemon() ; // if search is true 
-    
-    const data = await fetchPokemon() ;
-
-    const mapPokemon = data.find((pokemon) => {
-        return pokemon.name
-    });
-
-    if(isSearchThePokemon) {
-
-
-    }
-}

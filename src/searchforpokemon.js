@@ -27,7 +27,7 @@ const fetchPokemon = async (name) => {
 };
 
 const isLoading = (show) => {
-    document.getElementById("loading").style.display = show ? "block" : "none"; // Ternarry 
+    document.getElementById("loading").style.display = show ? "block" : "none"; // Ternary 
 }
 
 
@@ -44,9 +44,10 @@ export async function searchThePokemon() {
     
     // starting fetching
     // get the response 
-    const data = await fetchPokemon(inptPokemon);
-    const container = document.getElementById("container") ;
+    const data = await fetchPokemon(inptPokemon); // searching 
     console.log(data)
+    
+    const container = document.getElementById("container") ;
 
     const resultContainer = document.getElementById("resultContainer") ;
 
@@ -66,10 +67,6 @@ export async function searchThePokemon() {
 
             resultContainer.innerHTML = data.name
         }, 3000)
-
-
-        
-
     } else {
         alert("Pokemon is not Found!") ;
         container.style.display = "block"
@@ -77,3 +74,12 @@ export async function searchThePokemon() {
     
 };
 
+
+const displayResult = () => {
+
+    // map or find 
+    // if true searchThePokemon 
+    if(searchThePokemon){
+
+    }
+}

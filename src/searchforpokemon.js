@@ -27,7 +27,7 @@ const fetchPokemon = async (name) => {
 };
 
 const isLoading = (show) => {
-    document.getElementById("loading").style.display = show ? "block" : "none";
+    document.getElementById("loading").style.display = show ? "block" : "none"; // Ternarry 
 }
 
 

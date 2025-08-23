@@ -47,6 +47,7 @@ export async function searchThePokemon() {
     // get the response 
     const data = await fetchPokemon(inptPokemon); // searching 
     console.log(data)
+    const spritesData = data.sprites.front_default ;
     
     const container = document.getElementById("container") ;
 
@@ -61,7 +62,7 @@ export async function searchThePokemon() {
             isLoading(false)
             container.style.display = "block";
 
-            storeData.setPokemon({name: data.name })
+            storeData.setPokemon({name: data.name, image: spritesData })
             router.navigate("/result"); //
         }, 3000)
     } else {

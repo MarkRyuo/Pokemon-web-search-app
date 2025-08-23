@@ -44,3 +44,9 @@ Need to learn
 - State Management : use vanilla only (use Framework State libraries state manager like redux, etc. )
 - Error Handling
 - 
+
+
+# Plan(V2)
+
+- advance API config
+- advance modules 

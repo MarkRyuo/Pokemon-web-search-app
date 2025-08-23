@@ -6,6 +6,7 @@
                 "age" : 22,
                 "username": "Admin",
                 "password": "Admin",
+                "image" : "https://i.pinimg.com/736x/77/04/b4/7704b4b4b8dc19bd87367bde639a71f9.jpg",
 
                 "status" : {
                     "isAdmin" : true,
@@ -18,6 +19,7 @@
                 "age" : 18,
                 "username" : "Riyuo",
                 "password" : "Riyuo19",
+                "image" : "https://i.pinimg.com/736x/de/de/f4/dedef47b0a277285846248ade0c7d8cb.jpg",
 
                 "status" : {
                     "isAdmin" : false,

@@ -23,7 +23,7 @@ async function apiRequest(endpoint, options = {}) {
         retry = 1,
         headers = {},
         ...fetchOptions
-    } = options;
+    } = options; // I need comment here
     
 
     const url = local ? `${LOCAL_PATH}${endpoint}` : `${BASE_URL}${endpoint}`;

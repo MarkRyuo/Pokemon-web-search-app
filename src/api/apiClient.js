@@ -24,6 +24,7 @@ async function apiRequest(endpoint, options = {}) {
         headers = {},
         ...fetchOptions
     } = options;
+    
 
     const url = local ? `${LOCAL_PATH}${endpoint}` : `${BASE_URL}${endpoint}`;
 

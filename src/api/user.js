@@ -1,6 +1,10 @@
 import apiRequest from './apiClient.js';
 
-export const getUsers = () => apiRequest('/users', { retry: 2 });
+export const getUsers = () => apiRequest('/users', { 
+    method : "GET",
+    retry: 2 
+
+});
 
 export const createUser = (data) => apiRequest('/users', {
     method: 'POST',

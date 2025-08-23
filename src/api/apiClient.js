@@ -1,3 +1,5 @@
+// THE CORE LOGIC
+
 // Environment-based BASE URL (Vite style)
 const BASE_URL = import.meta.env.VITE_API_URL || 'https://example.com/api';
 const LOCAL_PATH = '/BASE/'; // for static JSON files in public folder

@@ -71,13 +71,3 @@ export async function searchThePokemon() {
     }
     
 };
-
-
-const displayResult = () => {
-
-    // map or find 
-    // if true searchThePokemon 
-    if(searchThePokemon){
-
-    }
-}

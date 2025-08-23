@@ -1,4 +1,5 @@
-import { router } from "./router.js"
+import { router } from "./router.js" ;
+import { storeData } from './store.js' ;
 
 const saveSearch = (pokemonName) => {
     // save the name of pokemon
@@ -49,9 +50,6 @@ export async function searchThePokemon() {
     
     const container = document.getElementById("container") ;
 
-    const resultContainer = document.getElementById("resultContainer") ;
-
-
     if(data) {
         // if data is true, hide the container & show the isLoading func. 
         // if data is true, setTimeout for delay 3s to show the data & show the container & set the isLoading to false.
@@ -64,8 +62,7 @@ export async function searchThePokemon() {
             container.style.display = "block";
 
             router.navigate("/result"); //
-
-            resultContainer.innerHTML = data.name
+            storeData.setPokemon({name: data.name })
         }, 3000)
     } else {
         alert("Pokemon is not Found!") ;

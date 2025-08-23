@@ -2,11 +2,13 @@ import { storeData } from "../store.js" ;
 
 export function result() {
     const data = storeData.getPokemon() ;
+    const Search = storeData.getLastSearch() ;
 
     if(!data) {
         document.querySelector("#app").innerHTML = `
             <div class="resultContainer">
-                <h1>NOT FOUND!</h1>
+                <h1>${Search.name}</h1>
+                <img src="${Search.image}" id="img">
             </div>
     
     `;

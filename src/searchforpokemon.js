@@ -62,7 +62,8 @@ export async function searchThePokemon() {
             isLoading(false)
             container.style.display = "block";
 
-            storeData.setPokemon({name: data.name, image: spritesData })
+            storeData.setPokemon({ name: data.name, image: spritesData })
+            storeData.setLastSearch({ name: data.name, image: spritesData })
             router.navigate("/result"); //
         }, 3000)
     } else {

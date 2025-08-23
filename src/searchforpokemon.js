@@ -7,7 +7,6 @@ const saveSearch = (pokemonName) => {
     localStorage.setItem("pokemonName", pokemonName);
 };
 
-
 const fetchPokemon = async (name) => {
     //
     try {

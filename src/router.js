@@ -4,7 +4,7 @@ import { homepage } from "./main.js";
 import { result } from "./pages/pokemonresult.js"
 
 // used navigo
-export const router = new Navigo('/') ;
+export const router = new Navigo('/') ; 
 
 
 

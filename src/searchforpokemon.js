@@ -61,8 +61,8 @@ export async function searchThePokemon() {
             isLoading(false)
             container.style.display = "block";
 
-            router.navigate("/result"); //
             storeData.setPokemon({name: data.name })
+            router.navigate("/result"); //
         }, 3000)
     } else {
         alert("Pokemon is not Found!") ;

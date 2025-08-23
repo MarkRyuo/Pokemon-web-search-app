@@ -1,7 +1,7 @@
-import { store } from "../store.js" ;
+import { storeData } from "../store.js" ;
 
 export function result() {
-    const data = store.getPokemon() ;
+    const data = storeData.getPokemon() ;
     document.querySelector("#app").innerHTML = `
             <div class="resultContainer">
                 <h1>${data.name}</h1>

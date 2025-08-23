@@ -35,3 +35,12 @@ Installed
 
 - Routing : Navigo 
 - Test json for API : 
+
+
+Need to learn 
+
+- API
+- ROUTING (route, routes)
+- State Management : use vanilla only (use Framework State libraries state manager like redux, etc. )
+- Error Handling
+- 

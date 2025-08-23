@@ -1,0 +1,46 @@
+[
+    {
+        "user" : [
+            {
+                "name" : "Moda",
+                "age" : 22,
+                "username": "Admin",
+                "password": "Admin",
+
+                "status" : {
+                    "isAdmin" : true,
+                    "isUser" : false 
+                }
+            },
+
+            {
+                "name": "Riyuo",
+                "age" : 18,
+                "username" : "Riyuo",
+                "password" : "Riyuo19",
+
+                "status" : {
+                    "isAdmin" : false,
+                    "isUser" : true
+                }
+            }
+        ]
+    },
+
+    {
+        "images" : [
+            { 
+                "url" : "https://i.pinimg.com/736x/a0/a2/7b/a0a27b20fbda9b4d55f023062a1bede9.jpg",
+                "description": [ "black hair", "moody hair" ] 
+            },
+
+            {
+                "url" : "https://i.pinimg.com/736x/7b/22/bb/7b22bb00b70fc2116be852e50e640ee5.jpg",
+                "description": [ "white hair", "moody face" ]
+            }
+            
+        ]
+    }
+
+
+]

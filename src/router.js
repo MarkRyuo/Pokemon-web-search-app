@@ -18,5 +18,5 @@ router
 
  
  document.addEventListener("DOMContentLoaded", () => {
-     router.resolve(); // resolve is methoc 
+     router.resolve(); // resolve is method 
  })

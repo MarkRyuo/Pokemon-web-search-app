@@ -22,3 +22,29 @@ Loading
 - display the loading about 3s
 - redisplay the container
 
+Display the results
+
+
+---
+
+
+
+Installed 
+
+- Routing : Navigo 
+- Test json for API : 
+
+
+Need to learn 
+
+- API
+- ROUTING (route, routes)
+- State Management : use vanilla only (use Framework State libraries state manager like redux, etc. )
+- Error Handling
+- 
+
+
+# Plan(V2)
+
+- advance API config
+- advance modules 

@@ -2,7 +2,8 @@ import './style.css'
 import { searchThePokemon } from './searchforpokemon'
 
 
-document.querySelector('#app').innerHTML = `
+export function homepage () {
+  document.querySelector('#app').innerHTML = `
   <div>
     <div id="container">
     <h1>POKEMON</h1>
@@ -16,9 +17,11 @@ document.querySelector('#app').innerHTML = `
     </div>
   </div>
 `
-
 const btnSearch = document.getElementById("btnSearch");
 btnSearch.addEventListener("click", searchThePokemon);
+
+}
+
 
 
 

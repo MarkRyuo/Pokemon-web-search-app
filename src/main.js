@@ -1,5 +1,6 @@
 import './style.css'
 import { searchThePokemon } from './searchforpokemon'
+import { router } from './router';
 
 
 export function homepage () {

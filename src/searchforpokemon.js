@@ -2,11 +2,6 @@ import { router } from "./router.js" ;
 import { storeData } from './store.js' ;
 import { apiRequest } from "./api/apiClient.js";
 
-const saveSearch = (pokemonName) => {
-    // save the name of pokemon
-    // save the last search
-    localStorage.setItem("pokemonName", pokemonName);
-};
 
 const fetchPokemon = async (name) => {
     return apiRequest("https://pokeapi.co/api/v2/pokemon", `/${name}`, {

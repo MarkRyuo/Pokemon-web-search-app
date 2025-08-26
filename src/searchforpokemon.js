@@ -1,5 +1,6 @@
 import { router } from "./router.js" ;
 import { storeData } from './store.js' ;
+import { apiRequest } from "./api/apiClient.js";
 
 const saveSearch = (pokemonName) => {
     // save the name of pokemon
@@ -8,22 +9,9 @@ const saveSearch = (pokemonName) => {
 };
 
 const fetchPokemon = async (name) => {
-    //
-    try {
-        // fetch the response
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`, {
-            method: "GET"
-        })
-        console.log(response)
-        if(!response.ok){
-            throw new Error("Failed to fetch Pokemon data!", response.status)
-        }
-        return await response.json();
-
-    } catch (error) {
-        console.error("Error Fetching Pokemon API!", error.message) ;
-        return null ;
-    }
+    return apiRequest("https://pokeapi.co/api/v2/pokemon", `/${name}`, {
+        Method: "GET"
+    } )
 };
 
 const isLoading = (show) => {

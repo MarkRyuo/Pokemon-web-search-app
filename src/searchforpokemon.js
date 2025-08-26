@@ -53,6 +53,7 @@ export async function searchThePokemon() {
             storeData.setLastSearch({ name: data.name, image: spritesData })
             router.navigate("/result"); //
         }, 3000)
+        
     } else {
         alert("Pokemon is not Found!") ;
         container.style.display = "block"

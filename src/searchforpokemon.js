@@ -14,6 +14,7 @@ const isLoading = (show) => {
 }
 
 
+
 export async function searchThePokemon() {
     // get the input
     const inptPokemon = document.getElementById("inptPokemon").value.toLowerCase().trim();

@@ -23,8 +23,7 @@ export async function searchThePokemon() {
     if(!inptPokemon) {
         alert("Enter a Pokemon!")
         return ;
-    }
-    
+    }    
     
     // starting fetching
     // get the response 

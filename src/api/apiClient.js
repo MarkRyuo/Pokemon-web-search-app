@@ -2,6 +2,7 @@
 
 // Flexible API request function
 export async function apiRequest(BASE_URL, endpoint, options = {}) {
+
     try {
         const response = await fetch(`${BASE_URL}${endpoint}`, {
             headers: {

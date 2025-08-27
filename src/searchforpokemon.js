@@ -34,13 +34,15 @@ export async function searchThePokemon() {
     
     // starting fetching
     // get the response 
-    const data = await fetchPokemon(pokemonName); // searching 
-    console.log(data)
-    const spritesData = data.sprites.front_default ;
-
+    
     try {
+        
+        const data = await fetchPokemon(pokemonName); // searching 
+        console.log(data)
+        const spritesData = data.sprites.front_default ;
+
         showLoading(true)
-        container.style.display = none ;
+        container.style.display = "none" ;
 
         await delay(3000)
 

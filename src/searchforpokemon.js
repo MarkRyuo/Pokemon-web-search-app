@@ -21,7 +21,7 @@ const delay = (ms) => {
 
 export async function searchThePokemon() {
     // get the input
-    const inptPokemon = document.getElementById("inptPokemon").value.toLowerCase().trim();
+    const inptPokemon = document.getElementById("inptPokemon") ;
     const container = document.getElementById("container") ;
 
     const pokemonName = inptPokemon.value.toLowerCase().trim() ;
@@ -42,7 +42,7 @@ export async function searchThePokemon() {
         showLoading(true)
         container.style.display = none ;
 
-        delay(3000)
+        await delay(3000)
 
         storeData.setPokemon({ name: data.name, image: spritesData })
         storeData.setLastSearch({ name: data.name, image: spritesData })

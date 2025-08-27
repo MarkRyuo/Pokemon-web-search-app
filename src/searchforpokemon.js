@@ -9,49 +9,50 @@ const fetchPokemon = async (name) => {
     } )
 };
 
-const isLoading = (show) => {
+const showLoading = (show) => {
     document.getElementById("loading").style.display = show ? "block" : "none"; // Ternary 
 }
+
+const delay = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms))
+};
 
 
 
 export async function searchThePokemon() {
     // get the input
     const inptPokemon = document.getElementById("inptPokemon").value.toLowerCase().trim();
+    const container = document.getElementById("container") ;
+
+    const pokemonName = inptPokemon.value.toLowerCase().trim() ;
 
     // guard clause 
-    if(!inptPokemon) {
+    if(!pokemonName) {
         alert("Enter a Pokemon!")
         return ;
     }    
     
     // starting fetching
     // get the response 
-    const data = await fetchPokemon(inptPokemon); // searching 
+    const data = await fetchPokemon(pokemonName); // searching 
     console.log(data)
     const spritesData = data.sprites.front_default ;
-    
-    const container = document.getElementById("container") ;
 
-    if(data) {
-        // if data is true, hide the container & show the isLoading func. 
-        // if data is true, setTimeout for delay 3s to show the data & show the container & set the isLoading to false.
-        isLoading(true)
-        container.style.display = "none";
-        
-        setTimeout(() => {
-            saveSearch(data.name) ;
-            isLoading(false)
-            container.style.display = "block";
+    try {
+        showLoading(true)
+        container.style.display = none ;
 
-            storeData.setPokemon({ name: data.name, image: spritesData })
-            storeData.setLastSearch({ name: data.name, image: spritesData })
-            router.navigate("/result"); //
-        }, 3000)
+        delay(3000)
+
+        storeData.setPokemon({ name: data.name, image: spritesData })
+        storeData.setLastSearch({ name: data.name, image: spritesData })
+        router.navigate("/result"); //
+
         
-    } else {
-        alert("Pokemon is not Found!") ;
+    } catch (error) {
         container.style.display = "block"
+        alert("Pokemon is not Found!") ;
+        console.error(error.message)
     }
     
 };

@@ -15,7 +15,7 @@ const showLoading = (show) => {
 
 const delay = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms))
-};
+}; // short 
 
 const delay02 = (ms) => {
     return new Promise((resolve, reject) => {
@@ -23,7 +23,7 @@ const delay02 = (ms) => {
          resolve(ms)   
         }, ms)
     })
-}
+} // for testing
 
 
 

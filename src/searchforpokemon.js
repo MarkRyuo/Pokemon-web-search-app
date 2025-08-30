@@ -17,6 +17,14 @@ const delay = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms))
 };
 
+const delay02 = (ms) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+         resolve(ms)   
+        }, ms)
+    })
+}
+
 
 
 export async function searchThePokemon() {
@@ -44,7 +52,7 @@ export async function searchThePokemon() {
         showLoading(true)
         container.style.display = "none" ;
 
-        await delay(3000)
+        await delay02(3000)
 
         storeData.setPokemon({ name: data.name, image: spritesData })
         storeData.setLastSearch({ name: data.name, image: spritesData })

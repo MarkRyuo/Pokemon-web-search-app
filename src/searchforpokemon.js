@@ -5,9 +5,13 @@ import { apiRequest } from "./api/apiClient.js";
 
 const fetchPokemon = async (name) => {
     return apiRequest("https://pokeapi.co/api/v2/pokemon", `/${name}`, {
-        Method: "GET"
+        method: "GET"
     } )
 };
+
+
+
+// Helpers 
 
 const showLoading = (show) => {
     document.getElementById("loading").style.display = show ? "block" : "none"; // Ternary 
@@ -17,50 +21,54 @@ const delay = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms))
 }; // short 
 
-const delay02 = (ms) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-         resolve(ms)   
-        }, ms)
-    })
-} // for testing
 
+// get input 
+const getInput = () => {
+    const inptPokemon = document.getElementById("inptPokemon");
+    const value = inptPokemon.value.toLowerCase().trim()
 
+    //Guard Clause 
+    if(!value) { 
+        alert("Enter a Pokemon!") 
+        return null ;
+    }
 
+    return value;
+}
+
+// show and hide 
+
+const handleUiSearch= (hide) => {
+    showLoading(true)
+    return container = document.getElementById("container").style.display = hide? "none": "block";
+}
+
+// store data
+
+const storedData = (name, image) => {
+    storeData.setPokemon({name: name, image: image })
+    storeData.setLastSearch({name: name, image: image})
+}
+
+// Main 
 export async function searchThePokemon() {
-    // get the input
-    const inptPokemon = document.getElementById("inptPokemon") ;
-    const container = document.getElementById("container") ;
-
-    const pokemonName = inptPokemon.value.toLowerCase().trim() ;
-
-    // guard clause 
-    if(!pokemonName) {
-        alert("Enter a Pokemon!")
-        return ;
-    }    
-    
-    // starting fetching
-    // get the response 
     
     try {
         
-        const data = await fetchPokemon(pokemonName); // searching 
+        const data = await fetchPokemon(getInput()); // searching 
         console.log(data)
         const spritesData = data.sprites.front_default ;
 
-        showLoading(true)
-        container.style.display = "none" ;
+        handleUiSearch(true)
 
-        await delay02(3000)
+        await delay(3000)
 
-        storeData.setPokemon({ name: data.name, image: spritesData })
-        storeData.setLastSearch({ name: data.name, image: spritesData })
+        storedData(data.name, spritesData)
         router.navigate("/result"); //
 
         
     } catch (error) {
-        container.style.display = "block"
+        handleUiSearch(false)
         alert("Pokemon is not Found!") ;
         console.error(error.message)
     }

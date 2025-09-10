@@ -18,5 +18,11 @@ router
 
  
  document.addEventListener("DOMContentLoaded", () => {
-     router.resolve(); // resolve is method 
+     //router.resolve(); // resolve is method
+     
+     if(window.location.pathname !== "/") {
+        router.navigate("/")
+     } else {
+        router.resolve()
+     }
  })
